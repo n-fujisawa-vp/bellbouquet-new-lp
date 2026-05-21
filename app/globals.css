@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #1a1a1a;
+  --color-primary-soft: #2d2d2d;
+  --color-secondary: #f7f3ef;
+  --color-accent: #c8a876;
+  --color-accent-deep: #9e7a3f;
+  --color-bg: #ffffff;
+  --color-bg-dark: #111111;
+  --color-text-body: #3a3a3a;
+  --color-text-muted: #8a8278;
+  --color-border: #e0dad3;
+
+  /* Fonts */
+  --font-ja: "Noto Sans JP", "Hiragino Sans", sans-serif;
+  --font-en-display: "Cormorant Garamond", Georgia, serif;
+  --font-en-body: "DM Sans", "Inter", system-ui, sans-serif;
+
+  /* Spacing */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+  --spacing-8: 48px;
+  --spacing-10: 64px;
+  --spacing-12: 80px;
+  --spacing-16: 128px;
+
+  /* Border radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* Breakpoints */
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-ja);
+    color: var(--color-text-body);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+
+  p {
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-en-display);
+  }
+
+  .font-body-en {
+    font-family: var(--font-en-body);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .bg-dark {
+    background-color: var(--color-bg-dark);
+  }
+
+  .section-padding {
+    padding-top: var(--spacing-12);
+    padding-bottom: var(--spacing-12);
+  }
+
+  @media (max-width: 767px) {
+    .section-padding {
+      padding-top: var(--spacing-8);
+      padding-bottom: var(--spacing-8);
+    }
+  }
+}
