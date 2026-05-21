@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 /* ─── Placeholder SVGs ─────────────────────────────── */
 
@@ -227,84 +228,95 @@ function Nav() {
 
 function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden" style={{ height: "calc(100svh - 0px)", minHeight: "560px" }}>
-      {/* Video BG */}
-      <div className="absolute inset-0 bg-[#0d0b08]">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: "brightness(0.82) saturate(1.1)" }}
-        >
-          <source src="/materials/20260520/P1010342.MP4" type="video/mp4" />
-        </video>
-        {/* テキスト右側を読みやすくする方向性グラデーション */}
+    <section
+      className="relative w-full overflow-hidden"
+      style={{ height: "100svh", minHeight: "560px" }}
+    >
+      {/* Photo BG */}
+      <div className="absolute inset-0 bg-[#0a0807]">
+        <Image
+          src="/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/beauty_1769145780455.jpeg"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          style={{ objectPosition: "center 65%" }}
+        />
+        {/* Layer 1: base film */}
+        <div className="absolute inset-0" style={{ background: "rgba(8,6,4,0.35)" }} />
+        {/* Layer 2: left panel — deep shadow for text readability */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(100deg, rgba(8,6,3,0.52) 0%, rgba(12,9,5,0.08) 45%, rgba(8,6,3,0.68) 100%)",
+              "linear-gradient(105deg, rgba(6,4,2,0.74) 0%, rgba(6,4,2,0.44) 36%, transparent 62%)",
           }}
         />
-        {/* ビネット — シネマティックな周辺減光 */}
+        {/* Layer 3: bottom vignette */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 58% 48%, transparent 28%, rgba(0,0,0,0.52) 100%)",
+              "linear-gradient(to top, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.18) 22%, transparent 44%)",
           }}
         />
-        {/* ブランドカラー アンバートーン（下から） */}
+        {/* Layer 4: amber aura — echoes the candlelight */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to top, rgba(200,168,118,0.08) 0%, transparent 45%)",
+              "radial-gradient(ellipse 60% 52% at 68% 62%, rgba(200,140,40,0.13) 0%, transparent 70%)",
           }}
         />
       </div>
 
-      {/* Content overlay — desktop: right panel / mobile: below image */}
+      {/* Content — left-anchored */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-[1200px] mx-auto px-6 w-full">
-          <div className="ml-auto lg:max-w-[480px]">
-            {/* English sub */}
-            <p
-              className="font-display text-white text-sm tracking-[0.2em] mb-4 opacity-70"
-              style={{ fontStyle: "italic" }}
-            >
-              For Your Memory
-            </p>
+        <div className="max-w-[1200px] mx-auto px-6 sm:px-10 w-full">
+          <div className="max-w-[520px]">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-7">
+              <div className="h-px w-8 flex-shrink-0" style={{ backgroundColor: "#C8A876", opacity: 0.85 }} />
+              <p
+                className="font-display text-[11px] tracking-[0.28em] uppercase"
+                style={{ color: "#C8A876", fontStyle: "italic" }}
+              >
+                For Your Memory
+              </p>
+            </div>
+
             {/* H1 */}
             <h1
-              className="text-white font-light leading-relaxed mb-6"
+              className="font-light leading-[1.65] mb-7"
               style={{
-                fontSize: "clamp(26px, 4vw, 42px)",
-                letterSpacing: "0.08em",
-                textShadow: "0 2px 20px rgba(0,0,0,0.5)",
+                fontSize: "clamp(34px, 5vw, 60px)",
+                letterSpacing: "0.07em",
+                color: "#F7F3EF",
               }}
             >
               あの日の花束を、
               <br />
-              永遠の記念に。
+              <span style={{ color: "#C8A876" }}>永遠</span>の記念に。
             </h1>
+
+            {/* Thin gold rule */}
+            <div className="mb-7" style={{ width: "40px", height: "1px", backgroundColor: "#C8A876", opacity: 0.55 }} />
+
             {/* Lead */}
             <p
-              className="text-white text-sm leading-loose mb-10 max-w-[360px]"
-              style={{ opacity: 0.8, letterSpacing: "0.06em" }}
+              className="text-sm leading-[2.1] mb-10 max-w-[340px]"
+              style={{ color: "rgba(247,243,239,0.76)", letterSpacing: "0.07em" }}
             >
               結婚式の花束をそのまま残せる
-              <br className="hidden sm:block" />
-              オーダーメイドフラワーアレンジ
+              <br />
+              オーダーメイドフラワーキャンドル
             </p>
+
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#cta"
-                className="text-white text-[13px] tracking-[0.12em] px-8 py-4 text-center transition-all duration-200"
+                className="text-white text-[13px] tracking-[0.14em] px-8 py-4 text-center transition-all duration-300"
                 style={{ backgroundColor: "#C8A876", borderRadius: "2px" }}
                 onMouseEnter={(e) =>
                   ((e.target as HTMLElement).style.backgroundColor = "#9E7A3F")
@@ -313,19 +325,25 @@ function HeroSection() {
                   ((e.target as HTMLElement).style.backgroundColor = "#C8A876")
                 }
               >
-                LINEで無料相談する →
+                LINEで無料相談する
               </a>
               <a
                 href="#products"
-                className="text-white text-[13px] tracking-[0.12em] px-8 py-4 text-center transition-all duration-200 border"
-                style={{ borderColor: "rgba(255,255,255,0.6)", borderRadius: "2px" }}
+                className="text-[13px] tracking-[0.14em] px-8 py-4 text-center transition-all duration-300 border"
+                style={{
+                  borderColor: "rgba(200,168,118,0.55)",
+                  color: "rgba(247,243,239,0.88)",
+                  borderRadius: "2px",
+                }}
                 onMouseEnter={(e) => {
                   const el = e.target as HTMLElement;
-                  el.style.backgroundColor = "rgba(255,255,255,0.1)";
+                  el.style.backgroundColor = "rgba(200,168,118,0.12)";
+                  el.style.borderColor = "rgba(200,168,118,0.9)";
                 }}
                 onMouseLeave={(e) => {
                   const el = e.target as HTMLElement;
                   el.style.backgroundColor = "transparent";
+                  el.style.borderColor = "rgba(200,168,118,0.55)";
                 }}
               >
                 作品を見る
@@ -335,8 +353,8 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-35">
         <span className="text-white text-[10px] tracking-[0.2em]">SCROLL</span>
         <div className="w-px h-8 bg-white animate-pulse" />
       </div>

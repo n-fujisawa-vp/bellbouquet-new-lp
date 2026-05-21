@@ -41,6 +41,9 @@ skills-lock.json
 # Reference / working assets (not needed in repo)
 screenshots/
 
+# Large video/mov originals
+public/materials/20260123_撮影素材/IMG_8887.MOV
+
 # Raw video originals >25 MB — compress with ffmpeg before committing
 # ffmpeg -i input.MP4 -vcodec libx264 -crf 23 -vf scale=1920:-2 -an output.mp4
 public/materials/20260520/P1010337.MP4
