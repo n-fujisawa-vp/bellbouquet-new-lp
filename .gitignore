@@ -35,3 +35,8 @@ Thumbs.db
 
 # Claude Code internal
 .claude/
+.agents/
+skills-lock.json
+
+# Reference / working assets (not needed in repo)
+screenshots/
