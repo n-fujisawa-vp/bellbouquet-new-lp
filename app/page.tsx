@@ -85,69 +85,6 @@ function FlowerPlaceholder({
   );
 }
 
-function HeroPlaceholder({ mobile = false }: { mobile?: boolean }) {
-  return (
-    <div
-      className={`relative overflow-hidden ${mobile ? "h-[60vh]" : "w-full h-full"}`}
-      style={{
-        background:
-          "linear-gradient(135deg, #1a1208 0%, #2d2010 25%, #3d2a12 50%, #1e180a 75%, #111111 100%)",
-      }}
-    >
-      {/* ambient glow */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 70% at 35% 50%, rgba(200,168,118,0.18) 0%, transparent 70%)",
-        }}
-      />
-      {/* SVG bouquet silhouette */}
-      <svg
-        viewBox="0 0 400 500"
-        className="absolute opacity-25"
-        style={{
-          left: mobile ? "50%" : "20%",
-          top: "50%",
-          transform: mobile
-            ? "translate(-50%, -50%)"
-            : "translate(-50%, -50%)",
-          width: mobile ? "70%" : "40%",
-          maxWidth: "360px",
-        }}
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* large roses */}
-        <ellipse cx="140" cy="160" rx="55" ry="55" fill="#C8A876" />
-        <ellipse cx="240" cy="140" rx="48" ry="48" fill="#9E7A3F" />
-        <ellipse cx="180" cy="220" rx="45" ry="45" fill="#B8966A" />
-        <ellipse cx="100" cy="220" rx="38" ry="38" fill="#A08050" />
-        <ellipse cx="270" cy="200" rx="40" ry="40" fill="#C8A876" />
-        {/* small accent flowers */}
-        <circle cx="155" cy="100" r="20" fill="#E8C896" />
-        <circle cx="295" cy="155" r="18" fill="#D4B480" />
-        <circle cx="70"  cy="170" r="16" fill="#B8966A" />
-        {/* stems */}
-        <line x1="200" y1="300" x2="200" y2="460" stroke="#6B7E52" strokeWidth="8" />
-        <line x1="160" y1="290" x2="180" y2="460" stroke="#6B7E52" strokeWidth="6" />
-        <line x1="240" y1="290" x2="220" y2="460" stroke="#6B7E52" strokeWidth="6" />
-        {/* leaves */}
-        <ellipse cx="155" cy="360" rx="28" ry="12" fill="#7A9060" transform="rotate(-30 155 360)" />
-        <ellipse cx="245" cy="380" rx="28" ry="12" fill="#6B7E52" transform="rotate(30 245 380)" />
-        {/* bow/wrapping */}
-        <ellipse cx="200" cy="440" rx="30" ry="8" fill="#E0DAD3" />
-      </svg>
-      {/* subtle texture */}
-      <div className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(200,168,118,0.15) 2px, rgba(200,168,118,0.15) 4px)",
-        }}
-      />
-    </div>
-  );
-}
 
 /* ─── Nav ──────────────────────────────────────────── */
 
@@ -291,9 +228,43 @@ function Nav() {
 function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden" style={{ height: "calc(100svh - 0px)", minHeight: "560px" }}>
-      {/* BG */}
-      <div className="absolute inset-0">
-        <HeroPlaceholder />
+      {/* Video BG */}
+      <div className="absolute inset-0 bg-[#0d0b08]">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ filter: "brightness(0.82) saturate(1.1)" }}
+        >
+          <source src="/materials/20260520/P1010342.MP4" type="video/mp4" />
+        </video>
+        {/* テキスト右側を読みやすくする方向性グラデーション */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(100deg, rgba(8,6,3,0.52) 0%, rgba(12,9,5,0.08) 45%, rgba(8,6,3,0.68) 100%)",
+          }}
+        />
+        {/* ビネット — シネマティックな周辺減光 */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 58% 48%, transparent 28%, rgba(0,0,0,0.52) 100%)",
+          }}
+        />
+        {/* ブランドカラー アンバートーン（下から） */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(200,168,118,0.08) 0%, transparent 45%)",
+          }}
+        />
       </div>
 
       {/* Content overlay — desktop: right panel / mobile: below image */}
