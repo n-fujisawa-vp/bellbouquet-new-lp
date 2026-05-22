@@ -452,22 +452,21 @@ function EmpathySection() {
 /* ─── S3: Features ──────────────────────────────────── */
 
 function FeaturesSection() {
-  const IMG = "/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/";
   const features = [
     {
-      image: IMG + "beauty_1769144267568.JPG",
+      image: "/images/craft-01.jpg",
       num: "01",
       title: "生花の質感をそのまま永久保存",
       desc: "花びら・茎・色を職人技で閉じ込める。あの日の美しさを損なわず、永遠に残します。",
     },
     {
-      image: IMG + "beauty_1769144341466.JPG",
+      image: "/images/craft-02.jpg",
       num: "02",
       title: "世界にひとつのオーダーメイドデザイン",
       desc: "お客様の想いをヒアリングして形にします。サイズ・テキスト・花の種類もご選択いただけます。",
     },
     {
-      image: IMG + "beauty_1769144693438.JPG",
+      image: "/images/craft-03.jpg",
       num: "03",
       title: "発送するだけで完成まで全おまかせ",
       desc: "LINEで相談、花束を発送すれば後はお任せ。梱包資材の案内もLINEでお届けします。",
@@ -549,25 +548,24 @@ function FeaturesSection() {
 /* ─── S4: Products ───────────────────────────────────── */
 
 function ProductsSection() {
-  const IMG = "/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/";
   const products = [
     {
       name: "ウェディングキャンドル",
       desc: "式の花束をそのままキャンドルに閉じ込めた定番プラン",
       price: "¥ 28,000 〜",
-      image: IMG + "beauty_1769145753467.jpeg",
+      image: "/images/product-01.jpg",
     },
     {
       name: "ペアキャンドル",
       desc: "想いを刻んだふたつのキャンドルをセットで",
       price: "¥ 22,000 〜",
-      image: IMG + "beauty_1769145693946.jpeg",
+      image: "/images/product-02.jpg",
     },
     {
       name: "メモリアルキャンドル",
       desc: "日付・メッセージ入りのインテリアキャンドル",
       price: "¥ 18,000 〜",
-      image: IMG + "beauty_1769144771059.JPG",
+      image: "/images/product-03.jpg",
     },
   ];
 
@@ -846,28 +844,27 @@ function ProcessSection() {
 /* ─── S6: Testimonials ───────────────────────────────── */
 
 function TestimonialsSection() {
-  const IMG = "/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/";
   const reviews = [
     {
       quote:
         "枯れてしまう前に送ってよかった。形になるとは思っていなかったので感動しました。",
       name: "M.K 様",
       meta: "30代・埼玉 2025.10",
-      image: IMG + "beauty_1769145338715.jpeg",
+      image: "/images/testimonial-01.jpg",
     },
     {
       quote:
         "玄関に飾るたびにあの日を思い出す。夫も気に入ってくれています。",
       name: "Y.S 様",
       meta: "20代・神奈川 2025.8",
-      image: IMG + "beauty_1769145426007.jpeg",
+      image: "/images/testimonial-02.jpg",
     },
     {
       quote:
         "LINEで気軽に相談できて、仕上がりも想像以上でした。またお願いしたい。",
       name: "A.T 様",
       meta: "30代・東京 2025.11",
-      image: IMG + "beauty_1769145444417.jpeg",
+      image: "/images/testimonial-03.jpg",
     },
   ];
 
