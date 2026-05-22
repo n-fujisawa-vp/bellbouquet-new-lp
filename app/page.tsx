@@ -456,20 +456,20 @@ function FeaturesSection() {
     {
       image: "/images/craft-01.jpg",
       num: "01",
-      title: "生花の質感をそのまま永久保存",
-      desc: "花びら・茎・色を職人技で閉じ込める。あの日の美しさを損なわず、永遠に残します。",
+      title: "生花の色と質感を、ワックスの中に永久封入",
+      desc: "バラの花びらの薄さ、かすみ草の細かな繊維、花芯の色味まで——クリスタルワックスの中で完全に保存されたまま、永遠に輝き続けます。",
     },
     {
       image: "/images/craft-02.jpg",
       num: "02",
-      title: "世界にひとつのオーダーメイドデザイン",
-      desc: "お客様の想いをヒアリングして形にします。サイズ・テキスト・花の種類もご選択いただけます。",
+      title: "名前・日付・想いを刻んだ、世界にひとつの作品",
+      desc: "お二人のお名前と記念日をキャンドルに刻印。ブーケの花の選定から文字レイアウトまで、完全オーダーメイドで一本一本制作します。",
     },
     {
       image: "/images/craft-03.jpg",
       num: "03",
-      title: "発送するだけで完成まで全おまかせ",
-      desc: "LINEで相談、花束を発送すれば後はお任せ。梱包資材の案内もLINEでお届けします。",
+      title: "ブーケを送るだけ——あとは全部bellbouquetに",
+      desc: "LINEでご希望をお伝えし、花束を発送いただければ完成品をお届け。デザイン構成・制作・梱包まで、すべてお任せください。",
     },
   ];
 
@@ -847,103 +847,117 @@ function TestimonialsSection() {
   const reviews = [
     {
       quote:
-        "枯れてしまう前に送ってよかった。形になるとは思っていなかったので感動しました。",
+        "点灯した瞬間、バラの花びらがオレンジ色に透けて光って——思わず涙が出ました。あの日の式の空気が、そのまま手元に戻ってきた気がして。枯れる前に送ってよかった。",
       name: "M.K 様",
-      meta: "30代・埼玉 2025.10",
-      image: "/images/testimonial-01.jpg",
+      meta: "30代・東京 / ウェディングキャンドル / 2025.10",
     },
     {
       quote:
-        "玄関に飾るたびにあの日を思い出す。夫も気に入ってくれています。",
+        "ふたりの名前と日付を刻んでもらえると知って即決しました。届いた箱を開けた瞬間、夫も一緒に感激して。玄関に飾るたびに結婚式の日を思い出します。",
       name: "Y.S 様",
-      meta: "20代・神奈川 2025.8",
-      image: "/images/testimonial-02.jpg",
+      meta: "20代・神奈川 / ペアキャンドル / 2025.8",
     },
     {
       quote:
-        "LINEで気軽に相談できて、仕上がりも想像以上でした。またお願いしたい。",
+        "LINEで写真を送るだけで、こんなに美しいものができるとは想像もしていませんでした。仕上がりを見た母が号泣してくれて、贈った側も幸せな気持ちになれました。",
       name: "A.T 様",
-      meta: "30代・東京 2025.11",
-      image: "/images/testimonial-03.jpg",
+      meta: "30代・埼玉 / メモリアルキャンドル / 2025.11",
     },
   ];
 
   return (
     <section id="testimonials" className="py-20 lg:py-28 bg-white">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <h2
-          className="text-center font-light mb-4"
-          style={{
-            color: "#1a1a1a",
-            fontSize: "clamp(20px, 2.5vw, 28px)",
-            letterSpacing: "0.08em",
-          }}
-        >
-          花嫁さまからのお声
-        </h2>
-        <div
-          className="w-12 h-px mx-auto mb-16"
-          style={{ backgroundColor: "#C8A876" }}
+      {/* Decorative candle strip */}
+      <div className="w-full h-[220px] lg:h-[280px] relative overflow-hidden mb-16">
+        <Image
+          src="/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/beauty_1769145753467.jpeg"
+          alt=""
+          fill
+          className="object-cover"
+          style={{ objectPosition: "center 40%" }}
+          sizes="100vw"
         />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.3) 60%, rgba(255,255,255,0.92) 100%)",
+          }}
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <h2
+            className="text-center font-light mb-3"
+            style={{
+              color: "#1a1a1a",
+              fontSize: "clamp(20px, 2.5vw, 28px)",
+              letterSpacing: "0.08em",
+            }}
+          >
+            花嫁さまからのお声
+          </h2>
+          <div className="w-12 h-px" style={{ backgroundColor: "#C8A876" }} />
+        </div>
+      </div>
 
+      <div className="max-w-[1200px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((r, i) => (
             <div
               key={i}
-              className="border overflow-hidden"
+              className="border flex flex-col"
               style={{
                 borderColor: "#E0DAD3",
                 borderRadius: "4px",
                 backgroundColor: "#f7f3ef",
+                padding: "32px 28px",
               }}
             >
-              {/* Photo */}
-              <div className="aspect-square relative overflow-hidden">
-                <Image
-                  src={r.image}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                />
+              {/* Gold quotation mark */}
+              <p
+                className="font-display font-light select-none mb-2"
+                style={{
+                  color: "#C8A876",
+                  fontSize: "72px",
+                  lineHeight: "0.75",
+                  opacity: 0.45,
+                }}
+              >
+                "
+              </p>
+
+              {/* Quote */}
+              <p
+                className="text-sm leading-[2] flex-1 mb-6"
+                style={{ color: "#3a3a3a", letterSpacing: "0.04em" }}
+              >
+                {r.quote}
+              </p>
+
+              {/* Stars */}
+              <div className="flex gap-1 mb-4">
+                {Array(5)
+                  .fill(0)
+                  .map((_, j) => (
+                    <svg key={j} className="w-3 h-3" viewBox="0 0 12 12" fill="#C8A876">
+                      <path d="M6 1l1.3 2.6 2.9.4-2.1 2 .5 2.9L6 7.5 3.4 8.9l.5-2.9-2.1-2 2.9-.4z" />
+                    </svg>
+                  ))}
               </div>
 
-              <div className="p-6">
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {Array(5)
-                    .fill(0)
-                    .map((_, j) => (
-                      <svg key={j} className="w-3 h-3" viewBox="0 0 12 12" fill="#C8A876">
-                        <path d="M6 1l1.3 2.6 2.9.4-2.1 2 .5 2.9L6 7.5 3.4 8.9l.5-2.9-2.1-2 2.9-.4z" />
-                      </svg>
-                    ))}
-                </div>
-
+              {/* Reviewer */}
+              <div className="border-t pt-4" style={{ borderColor: "#E0DAD3" }}>
                 <p
-                  className="text-sm leading-loose mb-5"
-                  style={{ color: "#3a3a3a", letterSpacing: "0.04em" }}
+                  className="text-xs font-light"
+                  style={{ color: "#1a1a1a", letterSpacing: "0.08em" }}
                 >
-                  「{r.quote}」
+                  {r.name}
                 </p>
-
-                <div
-                  className="pt-4 border-t"
-                  style={{ borderColor: "#E0DAD3" }}
+                <p
+                  className="text-[11px] mt-1 leading-relaxed"
+                  style={{ color: "#8a8278", letterSpacing: "0.05em" }}
                 >
-                  <p
-                    className="text-xs font-light"
-                    style={{ color: "#1a1a1a", letterSpacing: "0.06em" }}
-                  >
-                    {r.name}
-                  </p>
-                  <p
-                    className="text-[11px] mt-1"
-                    style={{ color: "#8a8278", letterSpacing: "0.06em" }}
-                  >
-                    {r.meta}
-                  </p>
-                </div>
+                  {r.meta}
+                </p>
               </div>
             </div>
           ))}
