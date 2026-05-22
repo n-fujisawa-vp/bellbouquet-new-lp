@@ -386,9 +386,26 @@ function EmpathySection() {
         </h2>
 
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          {/* Image placeholder */}
-          <div className="w-full lg:w-[40%] aspect-[3/2] lg:aspect-auto lg:h-[340px]">
-            <FlowerPlaceholder className="w-full h-full" dark />
+          {/* Photo */}
+          <div
+            className="w-full lg:w-[40%] aspect-[3/2] lg:aspect-auto lg:h-[340px] relative overflow-hidden flex-shrink-0"
+            style={{ borderRadius: "2px" }}
+          >
+            <Image
+              src="/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/beauty_1769145465744.jpeg"
+              alt="bellbouquetのフラワーキャンドル"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              style={{ objectPosition: "center 35%" }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to right, transparent 55%, rgba(17,17,17,0.35) 100%)",
+              }}
+            />
           </div>
 
           {/* Text */}
@@ -435,38 +452,23 @@ function EmpathySection() {
 /* ─── S3: Features ──────────────────────────────────── */
 
 function FeaturesSection() {
+  const IMG = "/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/";
   const features = [
     {
-      icon: (
-        <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none">
-          <circle cx="24" cy="24" r="20" stroke="#C8A876" strokeWidth="1.5" />
-          <path d="M16 24c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8" stroke="#C8A876" strokeWidth="1.5" strokeLinecap="round" />
-          <circle cx="24" cy="24" r="3" fill="#C8A876" />
-        </svg>
-      ),
+      image: IMG + "beauty_1769144267568.JPG",
+      num: "01",
       title: "生花の質感をそのまま永久保存",
       desc: "花びら・茎・色を職人技で閉じ込める。あの日の美しさを損なわず、永遠に残します。",
     },
     {
-      icon: (
-        <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none">
-          <rect x="8" y="8" width="32" height="32" rx="2" stroke="#C8A876" strokeWidth="1.5" />
-          <path d="M16 20h16M16 24h12M16 28h8" stroke="#C8A876" strokeWidth="1.5" strokeLinecap="round" />
-          <circle cx="34" cy="14" r="4" fill="#C8A876" opacity="0.7" />
-        </svg>
-      ),
+      image: IMG + "beauty_1769144341466.JPG",
+      num: "02",
       title: "世界にひとつのオーダーメイドデザイン",
-      desc: "お客様の想いをヒアリングして形にします。フレームサイズ・色・素材もご選択いただけます。",
+      desc: "お客様の想いをヒアリングして形にします。サイズ・テキスト・花の種類もご選択いただけます。",
     },
     {
-      icon: (
-        <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none">
-          <path d="M8 16h32v24a2 2 0 01-2 2H10a2 2 0 01-2-2V16z" stroke="#C8A876" strokeWidth="1.5" />
-          <path d="M4 12h40v4H4z" stroke="#C8A876" strokeWidth="1.5" />
-          <path d="M20 6h8l4 6H16l4-6z" stroke="#C8A876" strokeWidth="1.5" />
-          <path d="M24 20v12M20 24h8" stroke="#C8A876" strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
-      ),
+      image: IMG + "beauty_1769144693438.JPG",
+      num: "03",
       title: "発送するだけで完成まで全おまかせ",
       desc: "LINEで相談、花束を発送すれば後はお任せ。梱包資材の案内もLINEでお届けします。",
     },
@@ -490,15 +492,41 @@ function FeaturesSection() {
           style={{ backgroundColor: "#C8A876" }}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((f, i) => (
-            <div key={i} className="flex flex-col items-center text-center">
-              <div className="mb-6">{f.icon}</div>
+            <div key={i} className="group flex flex-col">
+              {/* Photo */}
+              <div
+                className="w-full aspect-[4/3] relative overflow-hidden mb-6"
+                style={{ borderRadius: "2px" }}
+              >
+                <Image
+                  src={f.image}
+                  alt={f.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(0,0,0,0.18) 0%, transparent 40%)",
+                  }}
+                />
+                <span
+                  className="absolute bottom-3 right-4 font-display font-light text-[10px] tracking-[0.22em]"
+                  style={{ color: "rgba(200,168,118,0.9)", fontStyle: "italic" }}
+                >
+                  {f.num}
+                </span>
+              </div>
+              {/* Text */}
               <h3
-                className="font-light mb-4"
+                className="font-light mb-3"
                 style={{
                   color: "#1a1a1a",
-                  fontSize: "16px",
+                  fontSize: "15px",
                   letterSpacing: "0.06em",
                 }}
               >
@@ -506,7 +534,7 @@ function FeaturesSection() {
               </h3>
               <p
                 className="text-sm leading-loose"
-                style={{ color: "#3a3a3a", letterSpacing: "0.04em" }}
+                style={{ color: "#5a5650", letterSpacing: "0.04em" }}
               >
                 {f.desc}
               </p>
@@ -521,24 +549,25 @@ function FeaturesSection() {
 /* ─── S4: Products ───────────────────────────────────── */
 
 function ProductsSection() {
+  const IMG = "/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/";
   const products = [
     {
-      name: "ブーケフレーム",
-      desc: "式の花束をそのまま額装して残す定番プラン",
+      name: "ウェディングキャンドル",
+      desc: "式の花束をそのままキャンドルに閉じ込めた定番プラン",
       price: "¥ 28,000 〜",
-      gradient: "from-stone-100 via-amber-50 to-stone-200",
+      image: IMG + "beauty_1769145753467.jpeg",
     },
     {
-      name: "ウェディングリース",
-      desc: "玄関・壁掛けになるリース型のアレンジメント",
+      name: "ペアキャンドル",
+      desc: "想いを刻んだふたつのキャンドルをセットで",
       price: "¥ 22,000 〜",
-      gradient: "from-amber-50 via-orange-50 to-stone-100",
+      image: IMG + "beauty_1769145693946.jpeg",
     },
     {
-      name: "テーブルアレンジメント",
-      desc: "インテリアとして飾れるローフォルムタイプ",
+      name: "メモリアルキャンドル",
+      desc: "日付・メッセージ入りのインテリアキャンドル",
       price: "¥ 18,000 〜",
-      gradient: "from-stone-200 via-amber-50 to-amber-100",
+      image: IMG + "beauty_1769144771059.JPG",
     },
   ];
 
@@ -575,14 +604,18 @@ function ProductsSection() {
                 borderRadius: "4px",
               }}
             >
-              {/* Product image placeholder */}
-              <div
-                className={`aspect-[4/3] bg-gradient-to-br ${p.gradient} relative overflow-hidden`}
-              >
-                <FlowerPlaceholder className="w-full h-full" />
+              {/* Product image */}
+              <div className="aspect-[4/3] relative overflow-hidden">
+                <Image
+                  src={p.image}
+                  alt={p.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                />
                 <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center"
-                  style={{ backgroundColor: "rgba(0,0,0,0.04)" }}
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                  style={{ backgroundColor: "rgba(0,0,0,0.06)" }}
                 />
               </div>
 
@@ -670,30 +703,35 @@ function ProductsSection() {
 /* ─── S5: Process ────────────────────────────────────── */
 
 function ProcessSection() {
+  const IMG = "/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/";
   const steps = [
     {
       num: "01",
       title: "LINEでご相談",
       sub: "無料相談 / 今すぐOK",
       desc: "お花の種類・ご希望のスタイルをLINEでお気軽にご相談ください。",
+      image: IMG + "beauty_1769144405978.JPG",
     },
     {
       num: "02",
       title: "花束をお送りいただく",
       sub: "お申込み後 / 発送手配",
       desc: "梱包資材のご案内もLINEで送付。式後すぐに発送いただけます。",
+      image: IMG + "beauty_1769144166980.JPG",
     },
     {
       num: "03",
       title: "職人が丁寧に制作",
       sub: "約 2〜3 週間",
       desc: "一点一点、職人が手作業で仕上げます。進捗もLINEでご報告します。",
+      image: IMG + "beauty_1769144118147.JPG",
     },
     {
       num: "04",
       title: "完成品をお届け",
       sub: "ご自宅に到着",
       desc: "丁寧に梱包してご自宅にお届け。大切な作品が永遠の記念になります。",
+      image: IMG + "beauty_1769145482865.jpeg",
     },
   ];
 
@@ -729,21 +767,25 @@ function ProcessSection() {
                 />
               )}
 
-              {/* Image placeholder */}
+              {/* Step image */}
               <div
                 className="aspect-square mb-5 relative overflow-hidden"
                 style={{ borderRadius: "4px" }}
               >
+                <Image
+                  src={s.image}
+                  alt={s.title}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                />
                 <div
-                  className="w-full h-full"
+                  className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(135deg, rgba(200,168,118,0.1) 0%, rgba(17,17,17,0.8) 100%)",
-                    border: "1px solid rgba(200,168,118,0.15)",
+                      "linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 40%, transparent 65%)",
                   }}
-                >
-                  <FlowerPlaceholder className="w-full h-full" dark />
-                </div>
+                />
                 {/* Step number overlay */}
                 <div
                   className="absolute top-3 left-3 font-display font-light text-[10px] tracking-[0.2em]"
@@ -804,27 +846,28 @@ function ProcessSection() {
 /* ─── S6: Testimonials ───────────────────────────────── */
 
 function TestimonialsSection() {
+  const IMG = "/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/";
   const reviews = [
     {
       quote:
         "枯れてしまう前に送ってよかった。形になるとは思っていなかったので感動しました。",
       name: "M.K 様",
       meta: "30代・埼玉 2025.10",
-      gradient: "from-stone-100 to-amber-50",
+      image: IMG + "beauty_1769145338715.jpeg",
     },
     {
       quote:
         "玄関に飾るたびにあの日を思い出す。夫も気に入ってくれています。",
       name: "Y.S 様",
       meta: "20代・神奈川 2025.8",
-      gradient: "from-amber-50 to-stone-100",
+      image: IMG + "beauty_1769145426007.jpeg",
     },
     {
       quote:
         "LINEで気軽に相談できて、仕上がりも想像以上でした。またお願いしたい。",
       name: "A.T 様",
       meta: "30代・東京 2025.11",
-      gradient: "from-stone-100 via-amber-50 to-stone-200",
+      image: IMG + "beauty_1769145444417.jpeg",
     },
   ];
 
@@ -857,9 +900,15 @@ function TestimonialsSection() {
                 backgroundColor: "#f7f3ef",
               }}
             >
-              {/* Image placeholder 1:1 */}
-              <div className={`aspect-square bg-gradient-to-br ${r.gradient}`}>
-                <FlowerPlaceholder className="w-full h-full" />
+              {/* Photo */}
+              <div className="aspect-square relative overflow-hidden">
+                <Image
+                  src={r.image}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
               </div>
 
               <div className="p-6">
