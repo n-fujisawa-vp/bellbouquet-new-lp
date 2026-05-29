@@ -832,7 +832,7 @@ function ProcessSection() {
               ((e.target as HTMLElement).style.backgroundColor = "#C8A876")
             }
           >
-            LINEで今すぐ相談する →
+            あなたのブーケを永遠に残す — 無料LINE相談 →
           </a>
         </div>
       </div>
@@ -908,7 +908,7 @@ function TestimonialsSection() {
                 borderColor: "#E0DAD3",
                 borderRadius: "4px",
                 backgroundColor: "#f7f3ef",
-                padding: "32px 28px",
+                padding: "44px 36px",
               }}
             >
               {/* Gold quotation mark */}
@@ -916,9 +916,9 @@ function TestimonialsSection() {
                 className="font-display font-light select-none mb-2"
                 style={{
                   color: "#C8A876",
-                  fontSize: "72px",
-                  lineHeight: "0.75",
-                  opacity: 0.45,
+                  fontSize: "88px",
+                  lineHeight: "0.7",
+                  opacity: 0.35,
                 }}
               >
                 "
@@ -961,6 +961,87 @@ function TestimonialsSection() {
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── CTA Bridge — 口コミ直後の上品なCTA ─────────────── */
+
+function InlineCtaSection() {
+  return (
+    <section
+      className="py-14 lg:py-20"
+      style={{
+        backgroundColor: "#FDFAF7",
+        borderTop: "1px solid #E0DAD3",
+        borderBottom: "1px solid #E0DAD3",
+      }}
+    >
+      <div className="max-w-[580px] mx-auto px-6 text-center">
+        {/* Eyebrow */}
+        <div className="flex items-center justify-center gap-3 mb-7">
+          <div className="h-px w-6 flex-shrink-0" style={{ backgroundColor: "#C8A876" }} />
+          <p
+            className="font-display text-[10px] tracking-[0.3em] uppercase"
+            style={{ color: "#C8A876", fontStyle: "italic" }}
+          >
+            For Your Memory
+          </p>
+          <div className="h-px w-6 flex-shrink-0" style={{ backgroundColor: "#C8A876" }} />
+        </div>
+
+        {/* Headline */}
+        <h3
+          className="font-light mb-5"
+          style={{
+            color: "#1a1a1a",
+            fontSize: "clamp(19px, 2.4vw, 26px)",
+            letterSpacing: "0.08em",
+            lineHeight: 1.8,
+          }}
+        >
+          あなたのブーケも、
+          <br />
+          <span style={{ color: "#C8A876" }}>永遠の記念</span>にできます。
+        </h3>
+
+        {/* Body */}
+        <p
+          className="text-sm mb-10"
+          style={{
+            color: "#6a6560",
+            letterSpacing: "0.06em",
+            lineHeight: 2.1,
+          }}
+        >
+          式が終わったあとでも、まだ間に合います。
+          <br className="hidden sm:block" />
+          まずはLINEでブーケのお写真をお送りください。
+        </p>
+
+        {/* CTA */}
+        <a
+          href="#cta"
+          className="inline-block text-white text-[13px] tracking-[0.14em] px-10 py-4 transition-all duration-300"
+          style={{ backgroundColor: "#C8A876", borderRadius: "2px" }}
+          onMouseEnter={(e) =>
+            ((e.target as HTMLElement).style.backgroundColor = "#9E7A3F")
+          }
+          onMouseLeave={(e) =>
+            ((e.target as HTMLElement).style.backgroundColor = "#C8A876")
+          }
+        >
+          無料LINE相談はこちら →
+        </a>
+
+        {/* Micro-trust */}
+        <p
+          className="mt-5 text-[11px] tracking-[0.08em]"
+          style={{ color: "#8a8278" }}
+        >
+          相談無料 · 全国対応 · 最短3週間でお届け
+        </p>
       </div>
     </section>
   );
@@ -1178,7 +1259,7 @@ function CTASection() {
             ((e.target as HTMLElement).style.backgroundColor = "#C8A876")
           }
         >
-          LINE公式アカウントを友達追加する
+          LINEで無料相談をはじめる →
         </a>
 
         <p className="text-white text-xs mb-4" style={{ opacity: 0.4 }}>
@@ -1188,7 +1269,7 @@ function CTASection() {
         {/* Secondary CTA */}
         <a
           href="mailto:info@bellbouquet.jp"
-          className="inline-block text-white text-[13px] tracking-[0.1em] px-10 py-4 border transition-all duration-200"
+          className="inline-block text-white text-[13px] tracking-[0.1em] px-10 py-4 border transition-all duration-200 whitespace-nowrap"
           style={{
             borderColor: "rgba(255,255,255,0.4)",
             borderRadius: "2px",
@@ -1204,7 +1285,7 @@ function CTASection() {
             el.style.backgroundColor = "transparent";
           }}
         >
-          お問い合わせフォームはこちら →
+          メールでお問い合わせ →
         </a>
 
         {/* Trust badges */}
@@ -1212,7 +1293,7 @@ function CTASection() {
           className="flex flex-wrap justify-center gap-6 mt-10 text-[11px] tracking-[0.1em]"
           style={{ color: "rgba(255,255,255,0.4)" }}
         >
-          {["相談無料", "全国対応", "個人情報は厳重に管理"].map((t, i) => (
+          {["相談・見積り無料", "全国発送対応", "最短3週間でお届け"].map((t, i) => (
             <span key={i} className="flex items-center gap-2">
               <span style={{ color: "rgba(200,168,118,0.6)" }}>—</span>
               {t}
@@ -1312,7 +1393,7 @@ function StickyLineButton() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 300);
+    const onScroll = () => setVisible(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -1351,6 +1432,7 @@ export default function Page() {
         <ProductsSection />
         <ProcessSection />
         <TestimonialsSection />
+        <InlineCtaSection />
         <FAQSection />
         <CTASection />
       </main>
