@@ -870,11 +870,11 @@ function TestimonialsSection() {
       {/* Decorative candle strip */}
       <div className="w-full h-[220px] lg:h-[280px] relative overflow-hidden mb-16">
         <Image
-          src="/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/beauty_1769145753467.jpeg"
-          alt=""
+          src="/images/review-01.jpg"
+          alt="花嫁さまの笑顔"
           fill
           className="object-cover"
-          style={{ objectPosition: "center 40%" }}
+          style={{ objectPosition: "center 35%" }}
           sizes="100vw"
         />
         <div
