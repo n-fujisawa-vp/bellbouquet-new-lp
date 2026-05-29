@@ -392,12 +392,12 @@ function EmpathySection() {
             style={{ borderRadius: "2px" }}
           >
             <Image
-              src="/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/beauty_1769145465744.jpeg"
-              alt="bellbouquetのフラワーキャンドル"
+              src="/images/empathy-hero.jpg"
+              alt="式が終わった後の花束と切ない感情"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 40vw, 100vw"
-              style={{ objectPosition: "center 35%" }}
+              style={{ objectPosition: "center 40%" }}
             />
             <div
               className="absolute inset-0"
