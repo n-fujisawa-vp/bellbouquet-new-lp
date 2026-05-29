@@ -701,35 +701,34 @@ function ProductsSection() {
 /* ─── S5: Process ────────────────────────────────────── */
 
 function ProcessSection() {
-  const IMG = "/materials/20260123_%E6%92%AE%E5%BD%B1%E7%B4%A0%E6%9D%90/";
   const steps = [
     {
       num: "01",
       title: "LINEでご相談",
       sub: "無料相談 / 今すぐOK",
       desc: "お花の種類・ご希望のスタイルをLINEでお気軽にご相談ください。",
-      image: IMG + "beauty_1769144405978.JPG",
+      image: "/images/process-01.jpg",
     },
     {
       num: "02",
       title: "花束をお送りいただく",
       sub: "お申込み後 / 発送手配",
       desc: "梱包資材のご案内もLINEで送付。式後すぐに発送いただけます。",
-      image: IMG + "beauty_1769144166980.JPG",
+      image: "/images/process-02.jpg",
     },
     {
       num: "03",
       title: "職人が丁寧に制作",
       sub: "約 2〜3 週間",
       desc: "一点一点、職人が手作業で仕上げます。進捗もLINEでご報告します。",
-      image: IMG + "beauty_1769144118147.JPG",
+      image: "/images/process-03.jpg",
     },
     {
       num: "04",
       title: "完成品をお届け",
       sub: "ご自宅に到着",
       desc: "丁寧に梱包してご自宅にお届け。大切な作品が永遠の記念になります。",
-      image: IMG + "beauty_1769145482865.jpeg",
+      image: "/images/process-04.jpg",
     },
   ];
 
